@@ -1,0 +1,6 @@
+print("Welcome to the tip calculator!")
+amount = float(input("What was the total bill? Rs. "))
+tip = int(input("How much tip would you like to give? 10, 12 or 15? "))
+person = int(input("How many people to split the bill? ")) 
+ampount_per_person = round(((amount + (amount*(tip/100)))/person),2)
+print(f"Each person should pay: Rs.{ampount_per_person}")
