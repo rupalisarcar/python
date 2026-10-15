@@ -27,7 +27,6 @@ t.setposition(-225,-225)
 for row in range(10):
     for _ in range(10):
         color = random.choice(new_colors)
-        print(color)
         t.dot(20, color)
         
         t.forward(50)
