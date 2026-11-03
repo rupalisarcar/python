@@ -6,7 +6,7 @@ file_path = os.path.join(dir_path,"nato_phonetic_alphabet.csv")
 
 
 alphabet_data_frame = pandas.read_csv(file_path)
-print(alphabet_data_frame)
+
 
 #Loop through rows of a data framefor (index, row) in student_data_frame.iterrows():
     #Access index and row
@@ -19,11 +19,18 @@ print(alphabet_data_frame)
 
 # Keyword Method with iterrows()
 phonetic_dict ={row.letter:row.code for (index,row) in alphabet_data_frame.iterrows()}
-print(phonetic_dict)
+
 
 
 
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
-user_input = list(input("Enter a word : ").upper())
-new_nato_word = [phonetic_dict[letter] for letter in user_input]
-print(new_nato_word)
+right_word=True
+while right_word:
+    user_input = list(input("Enter a word : ").upper())
+    try:
+        new_nato_word = [phonetic_dict[letter] for letter in user_input]
+    except KeyError:
+        print("Sorry, only letters in the alphabet please")
+    else:    
+        print(new_nato_word)
+        right_word=False
